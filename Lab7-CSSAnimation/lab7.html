@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css-animations</title>
+    <style>
+      .shape {
+        margin-top: 100px;
+        height: 200px;
+        width: 200px;
+      }
+
+      #circle {
+        background-color: darkcyan;
+        border-radius: 50%;
+        animation-name: slide-across;
+        animation-duration: 10s;
+        animation-iteration-count: 1;
+      }
+
+      #square {
+        background-color: darkcyan;
+        transform-origin: bottom right;
+        animation: roll 10s forwards ease-in-out;
+      }
+
+      @keyframes slide-across {
+        from {
+          margin-left: 500px;
+          background-color: darkcyan;
+        }
+        to {
+          margin-right: 50%;
+          background-color: aquamarine;
+        }
+      }
+      @keyframes roll {
+        0% {
+          transform: rotate(0deg) translate(0, 0);
+          background-color: #FA441C;
+        }
+        30% {
+            transform: rotate(30deg) translate(0 0);
+            background-color: #BC18D9;
+        }
+        60% {
+            transform: rotate(30deg) translate(0 0);
+            background-color: #7300EB;
+        }
+        100% {
+          transform: rotate(90deg) translate(0, 0);
+          background-color: #2711FB;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shape" id="circle"></div>
+    <div class="shape" id="square"></div>
+  </body>
+</html>

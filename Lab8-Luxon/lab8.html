@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 8 - Exercise 1</title>
+    <script src="
+https://cdn.jsdelivr.net/npm/luxon@3.7.2/build/global/luxon.min.js
+"></script>
+  </head>
+  <body>
+    <script>
+      // define luxon DateTim, Interval object
+      const { DateTime, Interval } = luxon;
+
+      // ==========================================
+      //  exercise 1
+      // ==========================================
+      console.log("Exercise 1 ------------------------");
+
+      // Calculate the number of days
+      // between your birthday and the current date
+
+      // using Interval
+      const dt = DateTime.now();
+      const bDate = DateTime.local(1970, 3, 7);
+      const interval = Interval.fromDateTimes(bDate, dt);
+      const daysBetween = Math.floor(interval.length("days"));
+      console.log(`Days since birth date: ${daysBetween}`);
+      // Days since birth date: 20273
+
+      // Without Interval
+      const daysBetweenBday_Today = DateTime.now().diff(
+        DateTime.local(1970, 3, 7),
+        "days"
+      ).days;
+      console.log(`Days since birth date: ${daysBetweenBday_Today}`);
+      // Days since birth date: 20273.578089444443
+
+      
+      // ==========================================
+      //  exercise 2
+      // ==========================================
+      console.log("\nExercise 2 ------------------------");
+
+      // Display the number of
+      // years, months, days between
+      // your birthdate and current date
+
+      const ymdBetween = dt.diff(bDate, ["years", "months", "days"]).toObject();
+
+      const yrs = Math.floor(ymdBetween.years);
+      const mths = Math.floor(ymdBetween.months);
+      const days = Math.floor(ymdBetween.days);
+
+      console.log(`${yrs} years, ${mths} months, ${days} days`);
+      // 55 years, 6 months, 0 days
+
+
+      // ==========================================
+      //  exercise 3
+      // ==========================================
+      console.log("\nExercise 3 ------------------------");
+
+      // Given two dates, display the
+      // closest date to the current date
+
+      // set 2 dates and current date
+      const currentDate = DateTime.now();
+      const date1 = DateTime.local(1998, 9, 9);
+      const date2 = DateTime.local(1970, 3, 7);
+
+      const closestDate = date1 < date2 ? date2 : date1;
+      console.log(`Closest date to now is ${closestDate.toLocaleString()}`);
+      // Closest date to now is 09/09/1998
+
+
+      // ==========================================
+      //  exercise 3 a)
+      // ==========================================
+      console.log("\nExercise 3 a) ------------------------");
+
+      const dateArray = [date1, date2];
+      const maxDateNum = Math.max(...dateArray);
+
+      const maxDate = DateTime.fromMillis(maxDateNum).toLocaleString();
+      console.log(`Closest date to now is ${maxDate}`);
+
+
+      // ==========================================
+      //  exercise 3 b)
+      // ==========================================
+      console.log("\nExercise 3 b) ------------------------");
+
+      const date10 = DateTime.fromISO("1998-09-09");
+      const date20 = DateTime.fromISO("1970-03-07");
+
+      // Current date = currentDate
+
+      // Math absolute differences in milliseconds
+      const diff1 = Math.abs(date1.toMillis() - currentDate.toMillis());
+      const diff2 = Math.abs(date2.toMillis() - currentDate.toMillis());
+
+      // Pick the closest one
+      const closest = diff1 < diff2 ? date1 : date2;
+
+      console.log("Closest date to now is:", closest.toISODate());
+
+
+      // ==========================================
+      //  exercise 4
+      // ==========================================
+      console.log("\nExercise 4 ------------------------");
+
+      // Given two dates, display
+      // wether the first date is
+      // before or after the second date.
+
+      if (date1 > date2) {
+        console.log(
+          `${date1.toLocaleString()} is before ${date2.toLocaleString()}`
+        );
+      } else {
+        console.log(
+          `${date1.toLocaleString()} is after ${date2.toLocaleString()}`
+        );
+      }
+      // 09/09/1998 is before 07/03/1970
+
+
+      // ==========================================
+      //  exercise 5
+      // ==========================================
+      console.log("\nExercise 5 ------------------------");
+
+      // Display the current time in London
+
+      // get local time
+      const localTime = currentDate;
+
+      // change to London time
+      const londonTime = localTime.setZone("Europe/London");
+
+      // format and display London time
+      const displayLondonTime = londonTime.toLocaleString(DateTime.TIME_SIMPLE);
+      console.log(`The time in London now is ${displayLondonTime}`);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+** Social Media Application Requirments **
+
+Actor: internet user
+    - register
+    - login
+
+Goal: create Figma prototype for social media app
+
+System: HTML, CSS, JavaScript
+
+Flow: 
+    - User registers / logs in to App
+    - User creates post / uploads content
+    - User clicks POST button
+    - Post is stored in the users account on the backend
+        - success / failure message displayed to user
+    - App is updated to display latest post / content
+
+Outcome:
+    - Post appears after a set time in global feed
+    - Post can only be seen in global feed by accepted friends / followers
+
+UseCases:
+    - create account
+    - login into account
+    - create a post / upload content
+    - POST post / content to users backend
+    - POST post / content to global backend
+    - update users feed to show new post
+    - update global users feed to show new post

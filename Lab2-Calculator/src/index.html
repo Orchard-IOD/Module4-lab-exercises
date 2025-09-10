@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M4 Lab2 Calculator</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body
+    class="d-flex justify-content-center align-items-center vh-100 bg-light"
+  >
+    <div class="container">
+      <div class="card">
+        <div class="card-body text-center">
+          <h1 class="card-title">Simple Calculator</h1>
+
+          <div
+            class="calc-component-container d-flex justify-content-center align-items-center"
+          >
+            <div class="numInput">
+              <input
+                class="calc-component"
+                type="number"
+                name=""
+                id="num1"
+                value="0"
+              />
+            </div>
+
+            <div
+              class="operators calc-component d-flex flex-wrap justify-content-center"
+            >
+              <div class="calc-operator" onclick="setOperator('add')">
+                <span class="ind-op">+</span>
+              </div>
+              <div class="calc-operator" onclick="setOperator('subtract')">
+                <span class="ind-op">-</span>
+              </div>
+              <div class="calc-operator" onclick="setOperator('divide')">
+                <span class="ind-op">/</span>
+              </div>
+              <div class="calc-operator" onclick="setOperator('multiply')">
+                <span class="ind-op">x</span>
+              </div>
+            </div>
+
+            <div class="numInput">
+              <input
+                class="calc-component"
+                type="number"
+                name=""
+                id="num2"
+                value="0"
+              />
+            </div>
+
+            <div
+              class="calc-component d-flex justify-content-center align-items-center"
+            >
+              <span class="equals-button" onclick="equation()">=</span>
+            </div>
+
+            <div class="result calc-component d-flex justify-content-center align-items-center">
+              <p id="result"></p>
+            </div>
+          </div>
+
+          <div class="reset">
+            <button onclick="reset()">RESET</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/calc-script.js"></script>
+  </body>
+</html>

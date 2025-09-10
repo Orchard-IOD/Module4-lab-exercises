@@ -1,0 +1,63 @@
+Card Collecting App
+
+App Name (Working Title): 
+========
+    - Cauldron / CardVault
+
+
+Overview:
+=========
+
+Cauldron 
+    - a mobile-first digital platform 
+    - allows users to 
+        - collect
+        - trade
+        - showcase
+        - manage digital or physical Magic The Gathering collectible cards 
+        - bridges traditional card collecting with modern social and digital tools.
+
+
+Core Features:
+=============
+    - Card collection
+    - Create personal collections (physical or digital)
+
+    - Upload/import cards with image recognition
+    - Add custom details (rarity, value, condition, etc.)
+
+
+Target Audience:
+===============
+    - Adult hobbyist and professional card collectors 
+
+
+Potential for future development and deployment:
+===============================================
+
+    Trading & Marketplace:
+    =====================
+        - Secure in-app trading with other users
+        - in-app marketplace with bidding/purchase features
+        - Rating system for trustworthy traders
+        - Card price tracking
+        - Alerts for rising/falling prices
+        - Collection value estimation
+
+    Community & Social:
+    ==================
+        - Follow collectors, view profiles
+        - Share collections or individual cards
+        - Comment, like, and message
+
+
+Potential Tech Stack:
+====================
+    - Frontend: React 
+    - Backend: Node.js + MongoDB 
+
+Authentication: 
+==============
+    - OAuth / Firebase Auth
+
+

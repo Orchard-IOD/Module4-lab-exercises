@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fake E-commerce Website</title>
+
+    <!-- Bootstrap css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <!-- App css -->
+    <link rel="stylesheet" href="./css/lab10.css">
+
+    <!-- Axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- bootstrap navbar -->
+    <nav class="navbar sticky-top">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h-2 fs-3">Fake Store</span>
+        <form class="d-flex" onSubmit="searchItem(event)">
+          <input
+            name="search"
+            class="search form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" style="width: 150px">
+            Categories
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li class="dropdown-item" 
+                onclick="displayCategory('mensclothing')">Men's Clothing</li>
+            <li class="dropdown-item" 
+                onclick="displayCategory('womensclothing')">Women's Clothing</li>
+            <li class="dropdown-item" 
+                onclick="displayCategory('jewelery')">Jewelery</li>
+            <li class="dropdown-item" 
+                onclick="displayCategory('electronics')">Electronics</li>
+            <li class="dropdown-item" 
+                onclick="displayCategory('all')">All</li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 150px">
+            Sort Items
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li class="dropdown-item" onclick="sortItems('pa')">Price Ascending</li>
+            <li class="dropdown-item" onclick="sortItems('pd')">Price Descending</li>
+            <li class="dropdown-item" onclick="sortItems('ttaz')">Title (A → Z)</li>
+            <li class="dropdown-item" onclick="sortItems('ttza')">Title (Z → A)</li>
+          </ul>
+        </div>        
+    </nav>
+
+
+    <!-- item container to append item-template clones -->
+    <div
+      id="item-container"
+      class="row m-2 d-flex gap-2 justify-content-center"
+    ></div>
+
+
+    <!-- news item card template -->
+    <template id="item-template">
+      <div class="card">
+        <img src="" class="card-img-top" alt="" height="300px" />
+        <div class="card-body">
+          <h5 class="card-title overflow-auto"></h5>
+          <div class="d-flex justify-content-between align-items-center">
+            <p class="card-cat-icon"></p>
+            <p class="card-price fw-bold fs-5"></p>
+          </div>
+          <p class="card-text overflow-auto"></p>
+          <div class="purchase-btn-cont">
+            <a href="#" class="btn btn-primary">Purchase</a>
+          </div>
+        </div>
+      </div>
+    </template>
+
+
+    <!-- Bootstrap JavaScript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <!-- App JavaScript -->
+    <script src="./js/icons.js"></script>
+    <script src="./js/itemsDisplayedStore.js"></script>
+    <script src="./js/fetchRender.js"></script>
+    <script src="./js/addItem.js"></script>
+    <script src="./js/categories.js"></script>
+    <script src="./js/search.js"></script>
+    <script src="./js/sort.js"></script>
+  </body>
+</html>

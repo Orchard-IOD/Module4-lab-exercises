@@ -1,0 +1,7 @@
+Create a Figma prototype for a social media application, 
+where you can post your content and posts from other users are visible. 
+
+Follow the design procedure by
+- clarifying the requirements
+- understanding the application flow
+- sketching a quick paper mockup. 

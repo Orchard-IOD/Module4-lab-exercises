@@ -1,0 +1,39 @@
+/* css overwrites */
+
+body {
+  background-color: rgb(218, 218, 203);
+}
+/* navbar */
+nav {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  background-color: #9b8e58;
+}
+.dropdown-item:hover {
+  background-color: #b3c4a2;
+}
+.dropdown-menu {
+  cursor: pointer;
+}
+
+/* template */
+.card {
+  width: 24rem;
+  background-color: rgb(244, 226, 204);
+}
+.card-title {
+  height: 80px;
+}
+.card-cat-icon {
+  width: 20px;
+  font-weight: 100;
+  cursor: pointer;
+}
+.card-text {
+  height: 200px;
+}
+.purchase-btn-cont {
+  text-align: center;
+}
+.btn {
+  width: 80%;
+}
